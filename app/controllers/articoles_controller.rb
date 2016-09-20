@@ -55,6 +55,15 @@ class ArticolesController<ApplicationController
         end
 
 
+      def destroy
+      	@article=Articole.find(params[:id])
+      	@article.destroy
+      	flash[:notice]="The article was deleted"
+
+      	redirect_to articoles_path
+
+      end
+
 
 	private
 	def article_params
