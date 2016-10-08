@@ -18,8 +18,9 @@ class ArticolesController<ApplicationController
 
 
 	def create
+		debugger
 		@article=Articole.new(article_params)
-		
+		@article.user=User.first
 		
 		if @article.save
 			flash[:success]= "Article was successfully created"
